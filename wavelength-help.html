@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Play — Wavelength</title>
+<style>
+  :root {
+    --bg: #14161a;
+    --panel: #1e2127;
+    --panel2: #23262c;
+    --line: #2c3037;
+    --text: #e9e7e2;
+    --muted: #8b8f98;
+    --accent: #c9a24b;
+    --blue: #4f7fb5;
+    --purple: #8a5fc9;
+    --gold: #f0c14b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 20px 16px 60px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  a.back {
+    display: inline-block;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 1.5rem; color: var(--accent); margin: 0 0 6px 0; }
+  p.sub { color: var(--muted); font-size: 0.92rem; margin: 0 0 22px 0; line-height: 1.5; }
+  h2 { font-size: 1.1rem; color: var(--accent); margin: 30px 0 12px 0; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .card p { margin: 0 0 8px 0; font-size: 0.92rem; line-height: 1.55; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .mode-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .mode-card h3 { margin: 0 0 6px 0; font-size: 1.05rem; }
+  .mode-card p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+  .mode-group { border-left-color: var(--blue); }
+  .mode-group h3 { color: var(--blue); }
+  .mode-h2h { border-left-color: var(--purple); }
+  .mode-h2h h3 { color: var(--purple); }
+  .mode-online { border-left-color: var(--accent); }
+  .mode-online h3 { color: var(--accent); }
+  .mode-offline { border-left-color: var(--muted); }
+  .mode-offline h3 { color: var(--text); }
+
+  .zone-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  .zone-row:last-child { margin-bottom: 0; }
+  .zone-swatch {
+    width: 30px;
+    height: 14px;
+    border-radius: 7px;
+    flex-shrink: 0;
+  }
+  .zone-row .pts { color: var(--text); font-weight: 700; min-width: 70px; }
+  .zone-row .desc { color: var(--muted); }
+
+  .steps { counter-reset: step; list-style: none; padding: 0; margin: 0; }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 38px;
+    margin-bottom: 16px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--panel2);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps li strong { color: var(--text); }
+  .tip { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="javascript:window.close()">← Close this tab</a>
+  <h1>📡 How to Play Wavelength</h1>
+  <p class="sub">One person can see a secret spot on a dial. Everyone else can't. Their only hope is a clue made of words — and words are a surprisingly leaky way to describe a point in space.</p>
+
+  <h2>The dial, in one breath</h2>
+  <div class="card">
+    <p>The dial is a spectrum between two opposite ideas — say, <strong>Cold</strong> on one end and <strong>Hot</strong> on the other. Somewhere along that line sits a hidden target. The <strong>Psychic</strong> can see exactly where it is. Nobody else can.</p>
+    <p>The Psychic gives a clue — a word, a phrase, whatever helps — meant to describe roughly where that hidden spot falls. Everyone else listens, then drags a needle to where they think it is. The closer you land, the more points you score.</p>
+  </div>
+
+  <h2>Scoring zones</h2>
+  <div class="card">
+    <div class="zone-row">
+      <span class="zone-swatch" style="background:#f0c14b"></span>
+      <span class="pts">4 points</span>
+      <span class="desc">Dead on. This zone is deliberately tiny — a real bullseye should be hard.</span>
+    </div>
+    <div class="zone-row">
+      <span class="zone-swatch" style="background:#8a5fc9"></span>
+      <span class="pts">3 points</span>
+      <span class="desc">Close. A solid, satisfying guess.</span>
+    </div>
+    <div class="zone-row">
+      <span class="zone-swatch" style="background:#4f7fb5"></span>
+      <span class="pts">2 points</span>
+      <span class="desc">Nearby. You were listening, at least.</span>
+    </div>
+    <div class="zone-row">
+      <span class="zone-swatch" style="background:#2c3037"></span>
+      <span class="pts">1 point</span>
+      <span class="desc">Everywhere else. Every guess earns something — nobody walks away with zero.</span>
+    </div>
+    <p class="tip">The zones only appear once a guess has actually been locked in — nobody sees them early enough to cheat off them.</p>
+  </div>
+
+  <h2>Two ways to play</h2>
+
+  <div class="mode-card mode-group">
+    <h3>👥 Group Mode</h3>
+    <p>One Psychic stays in that role for the <em>entire game</em> and never scores points themselves. Everyone else is guessing every round, all chasing the same target score — first to reach it wins. Great for 3 or more people.</p>
+  </div>
+
+  <div class="mode-card mode-h2h">
+    <h3>⚔️ Head to Head</h3>
+    <p>Exactly two players (or two teams). The Psychic and Guesser roles <strong>swap every round</strong> — so everyone takes turns doing both jobs, and both sides build up a real score. First to the target wins. This is the one built for exactly two people.</p>
+  </div>
+
+  <h2>Online vs. Pass &amp; Play</h2>
+  <div class="card">
+    <p>The rules are identical either way — only the mechanics of hiding information differ.</p>
+  </div>
+
+  <div class="mode-card mode-online">
+    <h3>📶 Online</h3>
+    <p>Everyone's on their own device. The Psychic's target and each guess stay private to your own screen until the moment they should be revealed — nothing to hide physically, the app handles it.</p>
+  </div>
+
+  <div class="mode-card mode-offline">
+    <h3>🤝 Pass &amp; Play</h3>
+    <p>One shared device. The Psychic taps to privately view their target, then hides it before passing the phone on. Guessers go one at a time, each locking in their guess before handing it to the next person — so nobody's guess can be influenced by seeing someone else's needle first.</p>
+  </div>
+
+  <h2>A round, start to finish</h2>
+  <div class="card">
+    <ol class="steps">
+      <li><strong>Pick a spectrum.</strong> Random from a built-in list, or make one up on the spot — "Guilty Pleasure ↔ Actually Terrible" works just as well as anything official.</li>
+      <li><strong>The Psychic reveals their target</strong> — privately — and studies it.</li>
+      <li><strong>The clue.</strong> Out loud, in your own words. A phrase is fair game, not just one word.</li>
+      <li><strong>Guessers place the needle</strong> based on nothing but that clue.</li>
+      <li><strong>The reveal.</strong> Zones appear, scores tally up, and everyone finds out how well the clue actually worked.</li>
+    </ol>
+  </div>
+
+  <p class="tip" style="margin-top:24px; text-align:center;">The best clues aren't the safest ones. Say what you actually think.</p>
+
+</div>
+</body>
+</html>
