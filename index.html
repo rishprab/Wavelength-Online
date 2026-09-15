@@ -322,13 +322,25 @@ try {
 const PLAYER_COLORS = ["#c9a24b", "#6b8fa3", "#b5504f", "#4f9b6e", "#8a5fc9", "#d47a9c", "#4f7fb5", "#c98a4b"];
 
 const SPECTRUMS = [
-  ["Cold", "Hot"], ["Underrated", "Overrated"], ["Actually Terrible", "Guilty Pleasure"],
-  ["Cheap", "Expensive"], ["Boring", "Thrilling"], ["Simple", "Complicated"],
-  ["Ancient", "Futuristic"], ["Quiet", "Loud"], ["Safe Choice", "Risky Choice"],
-  ["Formal", "Casual"], ["Common", "Rare"], ["Small Talk", "Deep Conversation"],
-  ["Relaxing", "Stressful"], ["Healthy", "Unhealthy"], ["Predictable", "Surprising"],
-  ["Indoor Activity", "Outdoor Activity"], ["Low Effort", "High Effort"], ["Niche", "Mainstream"],
-  ["Old-Fashioned", "Trendy"], ["Practical", "Impractical"]
+  ["Soft", "Hard"], ["Sweet", "Savory"], ["Bright", "Dim"], ["Smooth", "Chaotic"],
+  ["Fresh", "Stale"], ["Basic", "Sophisticated"], ["Tacky", "Classy"], ["Cringe", "Iconic"],
+  ["Amateur", "Professional"], ["Green Flag", "Red Flag"], ["Splurge", "Budget Option"],
+  ["Overthinking It", "Not Thinking At All"], ["Spur of the Moment", "Long-Term Plan"],
+  ["Comfort Food", "Fancy Food"], ["Better Cold", "Better Hot"], ["Guilty Snack", "Health Food"],
+  ["Flop", "Blockbuster"], ["Underground", "Viral"], ["Timeless Classic", "Dated"],
+  ["Beginner Friendly", "Expert Only"], ["Natural Talent", "Years of Practice"],
+  ["DIY Project", "Hire a Professional"], ["Morning Person Activity", "Night Owl Activity"],
+  ["Weekday Vibe", "Weekend Vibe"], ["Five-Minute Task", "All-Day Project"],
+  ["Would Post Online", "Would Keep Private"], ["Would Tell My Therapist", "Would Take to My Grave"],
+  ["Team Player Move", "Lone Wolf Move"], ["Polite Lie", "Brutal Honesty"],
+  ["Tourist Trap", "Hidden Gem"], ["Overpacked", "Underpacked"],
+  ["One-Time Thing", "Lifelong Obsession"], ["Rare Treat", "Everyday Habit"],
+  ["Introvert Energy", "Extrovert Energy"], ["Awkward", "Smooth Talker"],
+  ["Petty", "Generous"], ["Serious", "Silly"], ["Comforting", "Unsettling"],
+  ["Should Be a Movie", "Should Stay a Book"], ["First Date Appropriate", "Way Too Soon"],
+  ["Responsible Adult Move", "Chaotic Decision"], ["Wholesome", "Unhinged"],
+  ["Tiny", "Massive"], ["A Little", "A Lot"], ["Good Movie", "Bad Movie"],
+  ["Best Day of the Week", "Worst Day of the Week"]
 ];
 
 function escapeHtml(str) { const d = document.createElement("div"); d.textContent = str; return d.innerHTML; }
